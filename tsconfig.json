@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2018", // ou escolha uma versão adequada para o seu ambiente
+    "module": "CommonJS", // para Node.js
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["es2018", "dom"], // inclui suporte para o navegador
+    "outDir": "./dist", // diretório de saída do código transpilado
+    "strict": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "src/**/*.spec.ts"]
+}

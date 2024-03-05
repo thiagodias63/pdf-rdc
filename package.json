@@ -1,0 +1,29 @@
+{
+  "name": "pdf-rdc",
+  "version": "0.0.1",
+  "description": "A lib to generate pdf documents",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup",
+    "prepack": "npm run build",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
+  "keywords": [
+    "pdf"
+  ],
+  "author": "thiagodias63",
+  "license": "ISC",
+  "dependencies": {
+    "blob-stream": "^0.1.3",
+    "dayjs": "^1.11.10",
+    "pdfkit": "^0.14.0",
+    "vitest": "^1.3.1"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.3.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.3.1"
+  }
+}
