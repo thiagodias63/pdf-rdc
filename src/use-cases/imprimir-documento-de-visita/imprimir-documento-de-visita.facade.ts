@@ -19,13 +19,13 @@
 
 // {{/each}}
 // Observações: {{quotationCompanyObservation quotation}}
+import { cliente, pdfNomeClienteHelper } from '../../helpers/nome-cliente.helpers';
+import { pdfNomeResponsavelHelper, responsavel } from '../../helpers/nome-responsavel.helpers';
+import { pdfTelefonesResponsavelHelper } from '../../helpers/telefones-responsavel.helper';
+import { pdfRecursosEmpresaHelper, recurso } from '../../helpers/recursos-empresa.helper';
+import { pdfEmailsResponsavelHelper } from '../../helpers/emails-responsavel.helper';
+import { pdfCnpjHelper } from '../../helpers/cnpj.helper';
 import PDFDocument from 'pdfkit';
-import { cliente, pdfNomeClienteHelper } from '../../pdf/helpers/nome-cliente.helpers';
-import { pdfNomeResponsavelHelper, responsavel } from '../../pdf/helpers/nome-responsavel.helpers';
-import { pdfTelefonesResponsavelHelper } from '../../pdf/helpers/telefones-responsavel.helper';
-import { pdfRecursosEmpresaHelper, recurso } from '../../pdf/helpers/recursos-empresa.helper';
-import { pdfEmailsResponsavelHelper } from '../../pdf/helpers/emails-responsavel.helper';
-import { pdfCnpjHelper } from '../../pdf/helpers/cnpj.helper';
 
 export type imprimirDocumentoDeVisitaInput = {
   cliente: cliente;
@@ -37,7 +37,7 @@ export type imprimirDocumentoDeVisitaInput = {
   recursos?: Array<recurso>;
 };
 export const imprimirDocumentoDeVisita = (
-  doc: PDFDocument,
+  doc: typeof PDFDocument,
   { cliente, cnpj, responsavel, recursos, telefones, emails, observacao }: imprimirDocumentoDeVisitaInput
 ): void => {
   doc.font('Helvetica-Bold').fontSize(18.4).text(`Rei da Caixa D'água - Documento de Visita`, { align: 'center' });
